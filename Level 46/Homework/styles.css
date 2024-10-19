@@ -1,4 +1,4 @@
-/* Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@
     font-weight: bold;
   }
   
-  /* Menu styles */
+  /* Menu სტილები */
   .menu {
     list-style: none;
     display: flex;
@@ -60,7 +60,7 @@
     cursor: pointer;
   }
   
-  /* Animations */
+  /* ანიმაციები */
   .menu li a::after {
     content: '';
     position: absolute;
@@ -76,7 +76,7 @@
     width: 100%;
   }
   
-  /* Responsive styles */
+  /* რესპონსიური სტილები */
   #menu-toggle {
     display: none;
   }
