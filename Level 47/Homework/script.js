@@ -1,15 +1,15 @@
 
-// void function: წუთში 60 წამია ამიტომაც უნდა გავამრავლოთ 1 წუთი 60 ზე
+// წუთში 60 წამია ამიტომაც უნდა გავამრავლოთ 1 წუთი 60 ზე
 function MinutesToSecinds(minutes) {
     return minutes * 60;
 }
 
-//  void function: აბრუნებს ჯამის ნამრავლს მესამე რიცხვზე
+// აბრუნებს ჯამის ნამრავლს მესამე რიცხვზე
 function threenumberssum(a, b, c) {
     return (a + b) * c;
 }
 
-// void function: if statment ების გარეშე true and false  ასე დაბრუნდება
+// if statment ების გარეშე true and false  ასე დაბრუნდება
 function numbersTrueFalse(a, b) {
     return a > b; // აქ if არ არის საჭირო, რადგან შედარება უკვე აბრუნებს true ან false-ს
 }
