@@ -18,10 +18,7 @@ body {
     gap: 20px;
 }
 
-/* Adjusted shadow and colors */
-.square, .circle, .rectangle, .triangle, .pentagon, .ellipse, .star, .crescent, .heart {
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
-}
+
 
 /* Square */
 .square {
@@ -60,8 +57,8 @@ body {
     height: 0;
     border-style: solid;
     border-width: 0 40px 70px 40px;
-    border-color: transparent transparent #99cc00 transparent;
-    transform: rotate(36deg);
+    border-color:rgb(63, 183, 63) ;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
 /* Ellipse */
