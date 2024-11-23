@@ -1,27 +1,35 @@
 import math
 
-def count_area(shape, *args):
-    if shape == 'rectangle' and len(args) == 2:  # Rectangle area
-        length, width = args
-        return length * width
-    
-    elif shape == 'circle' and len(args) == 1:  # Circle area
-        radius = args[0]
-        return math.pi * radius ** 2
-    
-    elif shape == 'triangle' and len(args) == 3:  # Triangle area (Heron's formula)
-        a, b, c = args
-        if a + b > c and a + c > b and b + c > a:  # Triangle inequality check
-            s = (a + b + c) / 2
-            return math.sqrt(s * (s - a) * (s - b) * (s - c))
-        else:
-            return "Invalid triangle sides"
-    
-    else:
-        return "Invalid input"
+def count_area_rectangle(length, width):
+    # მართკუთედის ფართობის გამოთვლა
+    return length * width
 
-# Examples:
-print(count_area('rectangle', 5, 10))  # Rectangle area
-print(count_area('circle', 7))  # Circle area
-print(count_area('triangle', 3, 4, 5))  # Triangle area (valid)
-print(count_area('triangle', 1, 2, 10))  # Triangle area (invalid sides)
+def count_area_circle(radius):
+    # წრის ფართობის გამოთვლა
+    return math.pi * radius ** 2
+
+def count_area_triangle(a, b, c):
+    # სამკუთხედის ფართობის გამოთვლა ჰერონის ფორმულით
+    if a + b > c and a + c > b and b + c > a:  
+        s = (a + b + c) / 2
+        return math.sqrt(s * (s - a) * (s - b) * (s - c))
+    else:
+        return "invalduri sides (gverdebi)"
+
+# Example Usage:
+print("Rectangle Area:", count_area_rectangle(5, 10))  # Rectangle
+print("Circle Area:", count_area_circle(7))           # Circle
+print("Triangle Area (martebulia):", count_area_triangle(3, 4, 5))  # Triangle (valid)
+print("Triangle Area (invalduri sides (gverdebi)):", count_area_triangle(1, 2, 10))  # Triangle (invalid sides)
+
+
+
+
+
+
+
+
+
+
+
+
