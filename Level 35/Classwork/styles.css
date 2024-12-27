@@ -1,0 +1,82 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .grid-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .overlay h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .overlay p {
+    font-size: 16px;
+  }
+  
+  .grid-item:nth-child(1) .overlay {
+    background-color: rgba(0, 119, 204, 0.5);
+  }
+  
+  .grid-item:nth-child(2) .overlay {
+    background-color: rgba(120, 80, 70, 0.6);
+  }
+  
+  .grid-item:nth-child(3) .overlay {
+    background-color: rgba(20, 50, 110, 0.6);
+  }
+  
+  .grid-item:nth-child(4) .overlay {
+    background-color: rgba(180, 120, 60, 0.5);
+  }
+  
+  .grid-item:nth-child(5) .overlay {
+    background-color: rgba(0, 60, 100, 0.5);
+  }
+  
+  .grid-item:nth-child(6) .overlay {
+    background-color: rgba(200, 150, 90, 0.5);
+  }
+  

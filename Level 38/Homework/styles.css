@@ -1,0 +1,41 @@
+
+
+body {
+    background-color: #f5f5f5;
+    content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+
+
+@keyframes colorScale {
+    0% {
+      background-color: #ff4c4c;
+      transform: scale(1);
+    }
+    50% {
+      background-color: #4c8cff;
+      transform: scale(1.2);
+    }
+    100% {
+      background-color: #ff4c4c;
+      transform: scale(1);
+    }
+  }
+  
+  .animated-div {
+    width: 200px;
+    height: 200px;
+    background-color: #ff4c4c;
+    animation: colorScale 4s infinite;
+    margin: 20px auto;
+  }
+
+ 

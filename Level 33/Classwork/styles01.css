@@ -1,0 +1,45 @@
+
+
+/* სტილები div ბლოკისთვის */
+.example-box {
+    /* Padding: შიდა სივრცე შინაარსსა და გარსს შორის */
+    padding: 20px 15px 10px 5px; 
+
+    /* Margin: გარეთ სივრცე ელემენტებისგან დაშორება */
+    margin: 25px 20px 15px 10px; 
+
+    /* ფონური ფერი */
+    background-color: #e0f7fa; 
+
+    /* გარსი */
+    border: 2px solid #00796b; 
+
+    /* ტექსტის სტილიზაცია */
+    font-family: Arial, sans-serif; /* ფონტი */
+    font-size: 16px; /* ფონტის ზომა */
+    color: #004d40; /* ტექსტის ფერი */
+}
+
+/* იგივე ზომების მითითება კონკრეტულ მხარეებზე */
+.example-box {
+
+    /* Padding-ის კონკრეტული მხარეები */
+    padding-top: 20px; 
+    padding-right: 15px;
+    padding-bottom: 10px; 
+    padding-left: 5px; 
+
+    /* Margin-ის კონკრეტული მხარეები */
+    margin-top: 25px; 
+    margin-right: 20px; 
+    margin-bottom: 15px; 
+    margin-left: 10px; 
+
+    /* ფონური ფერი, გარსი და ტექსტის სტილიზაცია 
+     */
+    background-color: #e0f7fa; 
+    border: 2px solid #00796b; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    color: #004d40; 
+}

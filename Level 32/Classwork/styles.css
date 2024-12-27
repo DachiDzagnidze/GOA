@@ -1,0 +1,31 @@
+
+
+/* პირველი ბლოკი */
+.container1 {
+    width: 250px; /* შიგთავსის სიგანე */
+    height: 150px; /* შიგთავსის სიმაღლე */
+    padding: 30px; /* შიდა საზღვრები */
+    border: 10px solid #333; /* საზღვარი */
+    margin: 20px; /* გარე საზღვრები */
+    background-color: #f8b400; /* background ფერი */
+}
+
+/* მეორე ბლოკი */
+.container2 {
+    width: 180px; /* შიგთავსის სიგანე */
+    height: 120px; /* შიგთავსის სიმაღლე */
+    padding: 15px; /* შიდა საზღვრები */
+    border: 5px solid #007bff; /* საზღვრები */
+    margin: 25px; /* გარე საზღვრები */
+    background-color: #ff6f61; /* background ფერი */
+}
+
+/* მესამე ბლოკი */
+.container3 {
+    width: 120px; /* შიგთავსის სიგანე */
+    height: 90px; /* შიგთავსის სიმაღლე */
+    padding: 10px; /* შიდა საზღვრები */
+    border: 3px solid #000000; /* საზღვრები */
+    margin: 30px; /* გარე საზღვრები */
+    background-color: #ff0000; /* background ფერი */
+}
