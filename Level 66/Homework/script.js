@@ -13,7 +13,7 @@ function getUniqueElements(array) {
         }
 
         if (isUnique) {
-            result[result.length] = array[i];
+            result.push(array[i]);
         }
     }
 
