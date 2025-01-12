@@ -8,7 +8,6 @@ function checkText() {
   } else {
     enteredTexts.push(text);
     alert("Text saved.");
-  }
 }
 //* second way
 function NoRepeat() {
@@ -40,29 +39,16 @@ checkText();
 
 //! second task
 
-function NoRepeat() {
-  let array = [];
+function toZeroes(n){  
+  let divisor = 10 ** (String(n).length - 1)
 
-  while (true) {
-    let userInput = prompt("Please enter text:");
-
-    let alreadyExists = false;
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] === userInput) {
-        alreadyExists = true;
-        break;
-      }
-    }
-
-    if (alreadyExists) {
-      alert("You have already entered this text. Please try again.");
-    } else {
-      array.push(userInput);
-      alert("New text added.");
-    }
+  while(n % divisor !== 0){ 
+    n++
+    console.log(n)
   }
 
-
+}
+toZeroes(127)
 
 
 
