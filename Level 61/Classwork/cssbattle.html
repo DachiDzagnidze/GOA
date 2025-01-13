@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+<div class="square">
+<div class="inner-square"></div>
+<div class="inner-square"></div>
+<div class="inner-square"></div>
+<div class="inner-square"></div>
+</div>
+</div>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #588A95;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+    
+        }
+    
+        .square {
+            width: 80%;
+            height: 80%;
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+    
+        .inner-square {
+            width: 90px;
+            height: 90px;
+            background-color: #729EA1;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+</body>
+</html>
