@@ -10,6 +10,9 @@ console.log("shift:", arr2);
 
 
 // 3) splice
+let arr3 = [1, 2, 3, 4, 5];
+arr3.splice(2, 1, 'a', 'b'); //  moere indexze washlis 1 elements da daamatebs 'a's da 'b'es
+console.log("splice:", arr3); 
 
 // 4) slice
 let arr4 = [1, 2, 3, 4, 5];
@@ -33,7 +36,6 @@ arr7.reverse(); // areversebs masivs shemoatrialebs
 console.log("reverse:", arr7); 
 
 // 8) join
-
 let words = ["Hello", "World"];
 let message = words.join(" "); //join aertienebs arraishi calkeul elementebs da svavs orives ert elementad (" " space dashorebit)
 console.log(message); 
