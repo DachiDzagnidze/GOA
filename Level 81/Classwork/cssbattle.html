@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Battle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #FADE88;
+        }
+
+        .main {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background: #61A74E;
+            top: 25px;
+        }
+
+        .small {
+            position: absolute;
+            width: 40px;
+            height: 46px;
+            background: #FADE88;
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .side {
+            position: absolute;
+            width: 100px;
+            height: 190px;
+            background: #61A74E;
+            top: 214px;
+        }
+
+        .left {
+            left: 80px;
+        }
+
+        .right {
+            right: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+    <div class="small"></div>
+    <div class="side left"></div>
+    <div class="side right"></div>
+</body>
+</html>
