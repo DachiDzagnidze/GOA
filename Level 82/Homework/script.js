@@ -12,7 +12,7 @@ document.getElementById('stopButton').addEventListener('click', stopTimer);
 function startTimer() {
     const inputTime = parseInt(document.getElementById('timeInput').value);
 
-    if (isNaN(inputTime) || inputTime < 0 || inputTime > 10000) {
+    if ( inputTime < 0 || inputTime > 10000) {
         alert("Please enter time between 0-10000.");
         return; 
     }
