@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByClassName Example</title>
+</head>
+<body>
+    <p class="text">First paragraph.</p>
+    <p class="text">Second paragraph.</p>
+    <p class="text">Third paragraph.</p>
+
+    <script>
+
+        const textElements = document.getElementsByClassName('text');
+
+        // Changing the content of all elements with the class 'text'
+        for (let i = 0; i < textElements.length; i++) {
+            textElements[i].innerHTML = "This paragraph has been updated!";
+        }
+    </script>
+</body>
+</html>
