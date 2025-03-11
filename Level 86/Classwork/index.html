@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Divs and 10 Paragraphs</title>
+    <style>
+        div, p {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById("container"); // Get the container element
+
+        // 1) shevqmnat 10 div elementi
+        for (let i = 1; i <= 10; i++) {
+            const div = document.createElement("div");
+            div.textContent = `Div ${i}`; 
+            container.appendChild(div); //davamatot div containershi
+        }
+
+        // 2) shevqmnat 10 p elementi
+        for (let i = 1; i <= 10; i++) {
+            const p = document.createElement("p"); 
+            p.textContent = `Paragraph ${i}`; 
+            container.appendChild(p); 
+        }
+
+        // 3) kvela p tagis fonts gauwerot 3px
+        const allParagraphs = document.querySelectorAll("p");
+        allParagraphs.forEach(p => {
+            p.style.fontSize = "3px"; 
+        });
+    </script>
+</body>
+</html>

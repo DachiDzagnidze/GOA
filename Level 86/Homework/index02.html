@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Div</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 10; i++) {
+            const div = document.createElement('div');
+            document.body.appendChild(div);
+
+
+            div.style.width = '100px';
+            div.style.height = '100px';
+            div.style.margin = '10px';
+            div.style.border = '1px solid black';
+            div.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            div.style.boxShadow = `${Math.random() * 10}px ${Math.random() * 10}px 10px rgba(0, 0, 0, 0.5)`;
+        }
+    </script>
+</body>
+</html>
