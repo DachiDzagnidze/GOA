@@ -1,3 +1,4 @@
+//! first task
 let userInput = prompt("შემოიტანეთ სტრინგი: ");
 let startIndex = parseInt(prompt("შემოიტანეთ ინდექსი: "));
 
@@ -6,7 +7,7 @@ console.log("ამოჭრილი სტრინგი:", slicedResult);
 
 
 
-
+//! second task
 let sentence = prompt("შემოიტანეთ წინადადება: ");
 let reversedWordsResult = "";
 let word = "";
