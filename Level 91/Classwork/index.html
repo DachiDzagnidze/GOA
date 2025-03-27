@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternating Divs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Alternating Divs Demo</h1>
+    
+    <script>
+        let size = 20; 
+
+        for (let i = 0; i < 10; i++) {
+            const div = document.createElement('div');
+            div.style.width = `${size}px`;
+            div.style.height = `${size}px`;
+            div.style.backgroundColor = getRandomColor();
+            div.textContent = `Div ${i+1} (${size}px)`;
+            
+       
+            if (i % 2 === 0) {
+                document.body.insertBefore(div, document.body.firstChild.nextSibling);
+            } else {
+                document.body.appendChild(div);
+            }
+            
+            size *= 2; 
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
