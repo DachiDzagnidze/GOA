@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        #output {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Typing Animation</h1>
+    <input type="text" id="userInput" placeholder="Enter your text here">
+    <button onclick="startTyping()">Start Typing</button>
+    <div id="output"></div>
+
+    <script>
+        function startTyping() {
+            const input = document.getElementById('userInput').value;
+            const output = document.getElementById('output');
+            output.textContent = '';
+            let index = 0;
+
+            function type() {
+                if (index < input.length) {
+                    output.textContent += input[index];
+                    index++;
+                    setTimeout(type, 200); // Adjust typing speed here
+                }
+            }
+
+            type();
+        }
+    </script>
+</body>
+</html>

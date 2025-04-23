@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square to Circle Animation</title>
+    <style>
+        #shape {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 0;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="shape"></div>
+
+    <script>
+        const shape = document.getElementById('shape');
+
+        shape.addEventListener('click', () => {
+            shape.style.borderRadius = '50%'; // Change to circle
+            setTimeout(() => {
+                shape.style.borderRadius = '0'; // Change back to square
+            }, 1000); // 1 second delay
+        });
+    </script>
+</body>
+</html>

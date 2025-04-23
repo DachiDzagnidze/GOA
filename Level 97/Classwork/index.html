@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Tracker</title>
+</head>
+<body>
+    <input type="text" id="myInput">
+    <p>Added: <span id="added">0</span></p>
+    <p>Deleted: <span id="deleted">0</span></p>
+
+    <script>
+        let last = "";
+        let add = 0;
+        let del = 0;
+
+        document.getElementById("myInput").addEventListener("input", function(e) {
+            let now = e.target.value;
+            
+            if (now.length > last.length) {
+                add += now.length - last.length;
+            } else if (now.length < last.length) {
+                del += last.length - now.length;
+            }
+            
+            last = now;
+            document.getElementById("added").textContent = add;
+            document.getElementById("deleted").textContent = del;
+        });
+    </script>
+</body>
+</html>
