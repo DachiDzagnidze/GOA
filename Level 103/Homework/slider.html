@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slider Modulo</title>
+</head>
+<body>
+  <img id="slider" src="img1.jpg" width="300">
+  <br>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const images = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg'];
+    let index = 0;
+
+    function showImage() {
+      document.getElementById('slider').src = images[index % images.length];
+    }
+
+    function next() {
+      index++;
+      showImage();
+    }
+
+    function prev() {
+      index = (index - 1 + images.length) % images.length;
+      showImage();
+    }
+  </script>
+</body>
+</html>

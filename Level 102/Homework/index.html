@@ -1,0 +1,158 @@
+
+<!-- //! first task -->
+<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+  document.getElementById('parent').addEventListener('click', () => {
+    console.log('Parent clicked');
+  });
+
+  document.getElementById('child').addEventListener('click', () => {
+    console.log('Button clicked');
+  });
+</script>
+
+
+<!--!secomd task-->
+
+<div id="div1">
+  <div id="div2">
+    <div id="div3">Click here</div>
+  </div>
+</div>
+
+<script>
+  ['div1', 'div2', 'div3'].forEach(id => {
+    document.getElementById(id).addEventListener('click', () => {
+      console.log(`${id} clicked`);
+    });
+  });
+</script>
+
+<!--!third task-->
+
+<button id="btn">Click me</button>
+
+<script>
+  document.body.addEventListener('click', () => {
+    console.log('Body clicked');
+  });
+
+  document.getElementById('btn').addEventListener('click', () => {
+    console.log('Button clicked');
+  });
+</script>
+
+<!--!forth task-->
+<div id="parent">
+  <div id="child">Click me</div>
+</div>
+
+<script>
+  const handler = () => console.log('Clicked');
+
+  document.getElementById('parent').addEventListener('click', handler);
+  document.getElementById('child').addEventListener('click', handler);
+</script>
+
+<!--!fifth task-->
+<button id="btn1">
+  Button 1
+  <button id="btn2">
+    Button 2
+    <button id="btn3">Button 3</button>
+  </button>
+</button>
+
+<script>
+  ['btn1', 'btn2', 'btn3'].forEach(id => {
+    document.getElementById(id).addEventListener('click', () => {
+      console.log(`${id} clicked`);
+    });
+  });
+</script>
+
+
+<!--!sixth task-->
+
+<div id="outer">
+  <div id="inner">Click me</div>
+</div>
+
+<script>
+  document.getElementById('outer').addEventListener('click', () => {
+    console.log('Outer (capturing)');
+  }, true);
+
+  document.getElementById('inner').addEventListener('click', () => {
+    console.log('Inner (capturing)');
+  }, true);
+</script>
+
+
+
+<!--!seventh task-->
+
+<div id="container">
+  <button id="btn">Click me</button>
+</div>
+
+<script>
+  document.getElementById('container').addEventListener('click', () => {
+    console.log('Container (capturing)');
+  }, true);
+
+  document.getElementById('btn').addEventListener('click', () => {
+    console.log('Button (bubbling)');
+  });
+</script>
+
+<!--!eighth task-->
+
+<div id="div1">
+  <div id="div2">
+    <div id="div3">Click here</div>
+  </div>
+</div>
+
+<script>
+  ['div1', 'div2', 'div3'].forEach(id => {
+    document.getElementById(id).addEventListener('click', () => {
+      console.log(`${id} (capturing)`);
+    }, true);
+  });
+</script>
+
+
+<!--!nineth task-->
+
+<div id="box">Click me</div>
+
+<script>
+  document.getElementById('box').addEventListener('click', () => {
+    console.log('Capturing');
+  }, true);
+
+  document.getElementById('box').addEventListener('click', () => {
+    console.log('Bubbling');
+  });
+</script>
+
+
+<!--!tenth task-->
+
+<div id="wrapper">
+  <button id="btn">Click</button>
+</div>
+
+<script>
+  document.getElementById('wrapper').addEventListener('click', () => {
+    console.log('Wrapper (capturing)');
+  }, true);
+
+  document.getElementById('btn').addEventListener('click', () => {
+    console.log('Button (bubbling)');
+  });
+</script>

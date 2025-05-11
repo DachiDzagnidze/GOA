@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Programming Logos</title>
+</head>
+<body>
+  <img id="slider" src="python.png" width="200"><br>
+  <p id="label">Python</p>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const logos = [
+      {src: 'python.png', name: 'Python'},
+      {src: 'javascript.png', name: 'JavaScript'},
+      {src: 'java.png', name: 'Java'},
+      {src: 'csharp.png', name: 'C#'},
+      {src: 'cpp.png', name: 'C++'}
+    ];
+
+    let index = 0;
+
+    function update() {
+      document.getElementById('slider').src = logos[index].src;
+      document.getElementById('label').textContent = logos[index].name;
+    }
+
+    function next() {
+      index = (index + 1) % logos.length;
+      update();
+    }
+
+    function prev() {
+      index = (index - 1 + logos.length) % logos.length;
+      update();
+    }
+  </script>
+</body>
+</html>

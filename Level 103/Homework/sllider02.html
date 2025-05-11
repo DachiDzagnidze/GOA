@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GOA Mentors</title>
+</head>
+<body>
+  <img id="slider" src="mentor1.jpg" width="200"><br>
+  <p id="label">Mentor 1</p>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const mentors = [
+      {src: 'mentor1.jpg', name: 'Dato'},
+      {src: 'mentor2.jpg', name: 'Saba'},
+      {src: 'mentor3.jpg', name: 'Nika'},
+      {src: 'mentor4.jpg', name: 'Salome'},
+      {src: 'mentor5.jpg', name: 'Luka'}
+    ];
+
+    let index = 0;
+
+    function update() {
+      document.getElementById('slider').src = mentors[index].src;
+      document.getElementById('label').textContent = mentors[index].name;
+    }
+
+    function next() {
+      index = (index + 1) % mentors.length;
+      update();
+    }
+
+    function prev() {
+      index = (index - 1 + mentors.length) % mentors.length;
+      update();
+    }
+  </script>
+</body>
+</html>
