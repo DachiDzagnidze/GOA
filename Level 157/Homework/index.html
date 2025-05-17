@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pc dzagno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tech Parts</h1>
+        <div class="cart-btn" id="cartBtn">
+            Cart (<span id="cartCount">0</span>)
+        </div>
+    </header>
+
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <button class="close-btn" id="closeCart">✕</button>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-cart">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                Total: <span id="cartTotal">0</span>₾
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="products" id="products">
+        </div>
+    </main>
+
+    <script src="Parts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

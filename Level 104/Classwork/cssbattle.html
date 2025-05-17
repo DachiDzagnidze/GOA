@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="top"></div>
+  <div class="middle"></div>
+  <div class="bottom"></div>
+</div>
+<style>
+  body {
+    background-color: #a7d9ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .container {
+    width: 200px;
+    height: 150px;
+    position: relative;
+  }
+  .top {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 75px solid #435273;
+    position: absolute;
+    top: 0;
+  }
+  .middle {
+    width: 50px;
+    height: 50px;
+    background-color: #435273;
+    position: absolute;
+    top: 50px;
+    left: 75px;
+    transform: rotate(45deg);
+  }
+  .bottom {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 75px solid #435273;
+    position: absolute;
+    bottom: 0;
+  }
+</style>

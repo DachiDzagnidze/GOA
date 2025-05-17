@@ -1,0 +1,40 @@
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<style>
+  body {
+    margin: 0;
+    background: #4A9A86;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .box {
+    width: 79px;
+    height: 80px;
+    background: #4C4C6B;
+    margin: 0 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 11px;
+  }
+  .box::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: #FAE29E;
+    border-radius: 50%;
+  }
+  .box:nth-child(2) {
+    background: #FAE29E;
+  }
+  .box:nth-child(2)::before {
+    background: #4C4C6B;
+  }
+</style>
+
+
+
