@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Queue</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        input, button { margin: 5px; }
+        #output { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <input id="message" placeholder="Message">
+    <input id="delay" type="number" placeholder="Delay (ms)">
+    <button id="send">Send</button>
+    <div id="output"></div>
+    <script>
+        // Use plain arrays and basic DOM methods, avoid destructuring and arrow functions
+        var queue = [];
+        var running = false;
+
+        var message = document.getElementById('message');
+        var delayInput = document.getElementById('delay');
+        var output = document.getElementById('output');
+        var sendBtn = document.getElementById('send');
+
+        sendBtn.onclick = function() {
+            var msg = message.value;
+            var delay = parseInt(delayInput.value, 10);
+            if (!msg || isNaN(delay) || delay < 0) return;
+            queue.push({msg: msg, delay: delay});
+            if (!running) process();
+        };
+
+        function process() {
+            if (queue.length === 0) {
+                running = false;
+                return;
+            }
+            running = true;
+            var item = queue.shift();
+            setTimeout(function() {
+                output.innerText = item.msg;
+                process();
+            }, item.delay);
+        }
+    </script>
+</body>
+</html>
