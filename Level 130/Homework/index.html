@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke & Advice Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f4f8;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    select, button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1e7e34;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .error {
+      color: #b00020;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎭 Random Joke & Advice Generator</h1>
+
+  <div class="controls">
+    <select id="category">
+      <option value="Any">Any</option>
+      <option value="Programming">Programming</option>
+      <option value="Misc">Misc</option>
+      <option value="Pun">Pun</option>
+      <option value="Spooky">Spooky</option>
+      <option value="Christmas">Christmas</option>
+    </select>
+    <button onclick="generate()">Generate</button>
+  </div>
+
+  <div class="card-container">
+    <div class="card" id="jokeCard">
+      <h2>😂 Joke</h2>
+      <p id="jokeBox">Click generate to load a joke.</p>
+    </div>
+
+    <div class="card" id="adviceCard">
+      <h2>💡 Advice</h2>
+      <p id="adviceBox">Click generate to load advice.</p>
+    </div>
+
+    <div class="error" id="errorBox"></div>
+  </div>
+
+  <script>
+    async function generate() {
+      const category = document.getElementById('category').value;
+      const jokeBox = document.getElementById('jokeBox');
+      const adviceBox = document.getElementById('adviceBox');
+      const errorBox = document.getElementById('errorBox');
+
+      jokeBox.textContent = "Loading joke...";
+      adviceBox.textContent = "Loading advice...";
+      errorBox.textContent = "";
+
+      try {
+        // Fetch joke
+        const jokeRes = await fetch(`https://v2.jokeapi.dev/joke/${category}?safe-mode`);
+        const jokeData = await jokeRes.json();
+
+        if (jokeData.error) throw new Error(jokeData.message || "Joke API error");
+
+        if (jokeData.type === "single") {
+          jokeBox.textContent = jokeData.joke;
+        } else {
+          jokeBox.textContent = `${jokeData.setup}\n${jokeData.delivery}`;
+        }
+
+        // Fetch advice
+        const adviceRes = await fetch('https://api.adviceslip.com/advice');
+        const adviceData = await adviceRes.json();
+
+        adviceBox.textContent = adviceData.slip.advice;
+
+      } catch (err) {
+        jokeBox.textContent = "";
+        adviceBox.textContent = "";
+        errorBox.textContent = `⚠️ ${err.message}`;
+      }
+    }
+  </script>
+
+</body>
+</html>
