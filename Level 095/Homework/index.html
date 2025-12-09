@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="addDivButton">Add Div</button>
+
+    <script>
+        const button = document.getElementById('addDivButton');
+        button.addEventListener('click', () => {
+            const newDiv = document.createElement('div');
+            newDiv.textContent = 'This is a new div';
+            newDiv.style.border = '1px solid black';
+            newDiv.style.margin = '10px';
+            newDiv.style.padding = '10px';
+            document.body.appendChild(newDiv);
+        });
+    </script>
+    
+</body>
+</html>

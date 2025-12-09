@@ -1,0 +1,35 @@
+
+/* lets make div block where we will apply hover and active effects
+with trasform and translate and background color also translate,scale,rotate,trasnform-origin*/
+ 
+div {   
+    width: 200px;
+    height: 200px;
+    background-color: #f00;
+    transition: transform 0.3s; 
+  }
+  
+  div:hover {
+    transform: rotate(45deg); 
+  }
+  
+  div:active {
+    transform: rotate(-45deg);
+  }
+  div::content {
+    transform: rotate(45deg);
+    translate: 50px 50px;
+    scale: 2;
+    rotate: 45deg;
+    transform-origin: 0px 0px;
+  }
+
+ /* lets make div active form where we make hover and active effects*
+ like transform-origin,translate,scale,rotate,transform-origin*/
+
+
+ div:active {   
+    transform: 100px ; translate: 50px 50px; scale: 2; rotate: 45deg; transform-origin: 0px 0px;
+    transform-origin: 0px 0px; scale: 2; rotate: 45deg;
+ }
+  

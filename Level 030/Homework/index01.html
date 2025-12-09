@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact CSS Pseudo-Classes Example</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+
+        /* Links */
+        a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 5px;
+            display: inline-block;
+        }
+        a:link {
+            color: #007bff;
+        }
+        a:visited {
+            color: #6f42c1;
+        }
+        a:hover {
+            background-color: #e9ecef;
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        a:active {
+            color: #003d7a;
+        }
+
+        /* Buttons */
+        button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #c6c6c6;
+            cursor: not-allowed;
+        }
+
+        /* Form Inputs */
+        input[type="text"], textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin: 5px 0;
+        }
+        input:focus {
+            border-color: #007bff;
+        }
+        input:required {
+            border-color: #dc3545;
+        }
+
+        /* List Items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 4px;
+            border-radius: 4px;
+        }
+        li:nth-of-type(odd) {
+            background-color: #f9f9f9;
+        }
+        li:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Pseudo-Class Examples</h1>
+    
+    <section>
+        <h2>Links</h2>
+        <a href="#">Normal Link</a>
+        <a href="#">Visited Link</a>
+        <a href="#">Hover Over Me</a>
+        <a href="#" onclick="event.preventDefault();">Active Link</a>
+    </section>
+
+    <section>
+        <h2>Buttons</h2>
+        <button>Enabled Button</button>
+        <button disabled>Disabled Button</button>
+    </section>
+
+    <section>
+        <h2>Form Inputs</h2>
+        <input type="text" placeholder="Required Field" required>
+        <input type="text" placeholder="Optional Field">
+        <textarea placeholder="Type here"></textarea>
+    </section>
+
+    <section>
+        <h2>List Items</h2>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+    </section>
+</body>
+</html>

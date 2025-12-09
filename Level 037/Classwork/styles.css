@@ -1,0 +1,20 @@
+
+
+.div-block {
+    width: 200px;
+    height: 200px;
+    background-color: #f00;
+    transition: transform 0.3s; /* ბლოკს დაამატეთ გარდამავალი ეფექტი */
+  }
+  
+  .div-block:hover {
+    transform: rotate(45deg); /* hover-ზე ბრუნავს 45 გრადუსით მარჯვნივ */
+  }
+  
+  .div-block:active {
+    transform: rotate(-45deg); /* active-ზე ბრუნავს 45 გრადუსით მარცხნივ */
+  }
+  
+
+
+

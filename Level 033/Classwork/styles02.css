@@ -1,0 +1,42 @@
+
+
+
+
+.container {
+    display: flex;
+}
+
+.child {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* ჰორიზონტალური განლაგება */
+.horizontal-container {
+    display: flex;
+    margin-bottom: 20px; 
+}
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.child {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

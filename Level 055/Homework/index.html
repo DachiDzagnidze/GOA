@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .calculator {
+            margin: 0 auto;
+            width: 300px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="number"] {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: calc(50% - 10px);
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Simple Calculator</h1>
+        <input type="number" id="num1" placeholder="პირველი რიცხვი">
+        <input type="number" id="num2" placeholder="მეორე რიცხვი">
+        <br>
+        <button onclick="add()">+</button>
+        <button onclick="subtract()">-</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        // მიმატების ფუნქცია
+        function add() {
+            let num1 = parseFloat(document.getElementById("num1").value); // პირველი რიცხვის მიღება
+            let num2 = parseFloat(document.getElementById("num2").value); // მეორე რიცხვის მიღება
+            document.getElementById("result").innerText = "შედეგი: " + (num1 + num2); // შედეგის გამოტანა
+        }
+
+        // გამოკლების ფუნქცია
+        function subtract() {
+            let num1 = parseFloat(document.getElementById("num1").value); // პირველი რიცხვის მიღება
+            let num2 = parseFloat(document.getElementById("num2").value); // მეორე რიცხვის მიღება
+            document.getElementById("result").innerText = "შედეგი: " + (num1 - num2); // შედეგის გამოტანა
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slider If</title>
+</head>
+<body>
+  <img id="slider" src="img1.jpg" width="300">
+  <br>
+  <button onclick="prev()">Prev</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const images = ['img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg'];
+    let index = 0;
+
+    function showImage() {
+      document.getElementById('slider').src = images[index];
+    }
+
+    function next() {
+      if (index < images.length - 1) {
+        index++;
+      } else {
+        index = 0;
+      }
+      showImage();
+    }
+
+    function prev() {
+      if (index > 0) {
+        index--;
+      } else {
+        index = images.length - 1;
+      }
+      showImage();
+    }
+  </script>
+</body>
+</html>

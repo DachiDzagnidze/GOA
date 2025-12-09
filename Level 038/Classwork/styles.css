@@ -1,0 +1,45 @@
+
+
+
+/* გავცენტროთ Div-ი */
+body {  
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.my-div {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(0, 234, 255); 
+    border-radius: 20px; /* დივს ოდნავ მოუმრგვალოთ კუთხეები border-radius ით */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* გაუჯეთოთ ჩრდილი */
+    /* გამოვიყენოთ  transition  მას გაუწეროთ ყველაფერი ერთად რომ არ მოგვიწიოს ცალ-ცალკე გაწერა
+    თითოეულ ფუნქციის */
+    transition: background-color 1s ease-in-out, transform 0.7s ease-in-out, border-radius 1s ease-in-out;
+}
+
+/* გავაკეთოთ div ისთვის hoveri როდესაც შევეხებით  divs  გააკეთოს რაიმე ანიმაცია-ცვლილება  */
+.my-div:hover {
+    background-color: rgb(25, 25, 237); 
+    transform: rotate(720deg)  translate(20px); /* შემოვატირალოთ div 720 გრადუსით  */
+    border-radius: 50%; /* შევცვალოთ ფორმა წრედ  */
+}
+
+div{    
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+
+@keyframes my-animation {
+    from {
+        background-color: rgb(40, 79, 83); 
+    }
+    to {
+        background-color: rgb(45, 45, 104);
+    }
+
+}

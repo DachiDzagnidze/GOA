@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Event</title>
+    <style>
+        /* მცირე CSS სტილი ღილაკისთვის */
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- ღილაკი -->
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // მოვლენა (Event): ეს არის მოქმედება ან მოვლენა, რომელიც ხდება მომხმარებლის ან სისტემის მიერ (მაგ., ღილაკზე დაწკაპუნება, კლავიატურის ღილაკის დაჭერა).
+        // მოვლენის მსმენელი (Event Listener): კოდის ნაწილი, რომელიც "ისმენს" კონკრეტულ მოვლენას და მასზე შესაბამის რეაგირებას ახდენს.
+
+        // ღილაკის მოვლენის მსმენელის დამატება
+        document.getElementById('myButton').addEventListener('click', function () {
+            alert("Button Clicked"); // გამაფრთხილებელი მესიჯი
+        });
+
+        // ორი ცვლადის შექმნა
+        let num1 = 10; // პირველი რიცხვი
+        let num2 = 20; // მეორე რიცხვი
+
+        // მნიშვნელობების შეცვლა
+        let temp = num1; // დროებითი ცვლადი გამოიყენება num1-ის მნიშვნელობის შენახვისთვის
+        num1 = num2; // num1 იღებს num2-ის მნიშვნელობას
+        num2 = temp; // num2 იღებს თავდაპირველი num1-ის მნიშვნელობას
+
+        // მათემატიკური ოპერაციები
+        let sum = num1 + num2; // ორ რიცხვს ვამატებთ
+        let difference = num1 - num2; // პირველი რიცხვიდან ვაკლებთ მეორეს
+        let product = num1 * num2; // ვამრავლებთ ორ რიცხვს
+        let quotient = num1 / num2; // ვყოფთ პირველ რიცხვს მეორეზე
+
+        console.log("Sum:", sum); // შედეგის კონსოლში გამოყვანა
+        console.log("Difference:", difference);
+        console.log("Product:", product);
+        console.log("Quotient:", quotient);
+
+    </script>
+    <!-- Inline JavaScript იწერება HTML ელემენტის ატრიბუტში, მაგალითად `onclick`. -->
+    <!-- ნაკლებად რეკომენდირებულია, რადგან არღვევს კოდის ორგანიზებას. -->
+    <button onclick="alert('ეს არის Inline JavaScript')">Inline Example</button>
+
+    <hr>
+
+    <!-- Internal JavaScript -->
+    <!-- Internal JavaScript იწერება HTML ფაილში `<script>` ტეგის შიგნით. -->
+    <!-- ეს გამოიყენება მაშინ, როცა კოდი კონკრეტულად ამ გვერდისთვის არის საჭირო. -->
+    <script>
+        // მაგალითი Internal JavaScript-ისთვის
+        document.write("<p>ეს არის Internal JavaScript</p>");
+    </script>
+
+    <hr>
+
+    <!-- External JavaScript -->
+    <!-- External JavaScript ინახება ცალკე `.js` ფაილში. -->
+    <!-- ამ მეთოდს უპირატესობა ენიჭება, რადგან კოდის მართვა მარტივია. -->
+    <!-- ეს დაკავშირებულია ქვემოთ მოყვანილი ტეგით. -->
+    <script src="script.js"></script>
+    </script>
+</body>
+</html>
+
+

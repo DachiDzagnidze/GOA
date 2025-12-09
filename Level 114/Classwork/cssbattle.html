@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Battle</title>
+    <style>
+        * {
+            background: #5AED9C;
+        }
+        * * {
+            background: #4B4D88;
+            margin: 100 150;
+            border-radius: 1in;
+        }
+        p {
+            padding: 30 15;
+            position: fixed;
+            margin: -76 35;
+        }
+        p + p {
+            rotate: 45deg;
+            margin: -48 103;
+        }
+        [a] {
+            margin: -48 -33;
+            rotate: -45deg;
+        }
+        [b] {
+            rotate: 90deg;
+            margin: 20 131;
+            -webkit-box-reflect: below 132px;
+        }
+    </style>
+</head>
+<body>
+
+    <p></p>
+    <p></p>
+    <p a></p>
+    <p b></p>
+</body>
+</html>

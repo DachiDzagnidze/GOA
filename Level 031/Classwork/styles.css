@@ -1,0 +1,88 @@
+
+/* ფონური დიზაინი */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c7f7ff; 
+
+}
+
+/* კონტეინერი */
+.container {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 360px;
+    text-align: center;
+    margin: 20px;
+}
+
+.header {
+    background: #6a5acd;
+    color: white;
+    padding: 30px 20px;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+
+
+button {
+    background: #6a5acd;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #5941ab;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: #6a5acd;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

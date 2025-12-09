@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <style>
+        body {
+            background: #5AED9C;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        .shape {
+            width: 40px;
+            height: 40px;
+            background: #4B4D88;
+            position: absolute;
+        }
+        .shape::before,
+        .shape::after {
+            content: "";
+            position: absolute;
+            background: #4B4D88;
+        }
+        .shape::before {
+            width: 69px;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+        .shape::after {
+            width: 70%;
+            height: 80px;
+            left: 0;
+            bottom: 0;
+        }
+        .shape:nth-child(1) {
+            top: 72px;
+            left: 55px;
+        }
+        .shape:nth-child(2) {
+            top: 120px;
+            left: 12px;
+        }
+        .shape:nth-child(3) {
+            top: 10px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+</body>
+</html>

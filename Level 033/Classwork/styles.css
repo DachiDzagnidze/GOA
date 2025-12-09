@@ -1,0 +1,33 @@
+
+
+
+/* gavstilot kvela div-i */
+.box {
+    /* divebis backrgound colori*/
+    background-color: #3e8fd6; 
+
+    /* garsi div-is */
+    border: 1px solid #000; 
+
+    /*shoida sivrce div-is shignit(teqtss da borders shoris) */
+    padding: 10px; /* 10 პიქსელი padding ყველა მხრიდან */
+
+    /* garsi div-ის garet */
+    margin: 20px; 
+
+    /* gauketot meti style */
+    font-family: Arial ; 
+    text-align: center; /* gavcontrot teqsti */
+    font-size: 16px; /* fontis feri */
+    color: #333; /* teqstis feri*/
+}
+
+
+#box1 {
+    background-color: #e6ffe6;
+}
+
+
+#box2 {
+    background-color: #ff0000; 
+}

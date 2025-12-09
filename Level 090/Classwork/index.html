@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Example</title>
+    <style>
+        body {
+            margin: 0;
+            background: #FADE88;
+        }
+        .shape {
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        .shape::before,
+        .shape::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 25px;
+            background: #E3516E;
+        }
+        .shape::before {
+            top: -20px;
+            clip-path: polygon(25% 0, 75% 0, 100% 100%, 0 100%);
+            height: 35px;
+            width: 100%;
+        }
+        .shape::after {
+            bottom: -20px;
+            clip-path: polygon(0 0, 100% 0, 75% 100%, 25% 100%);
+            height: 50px;
+        }
+        .circle {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background: #E3516E;
+            border-radius: 50%;
+            top: 0px;
+            left: 55px;
+            box-shadow: 0 0 0 10px #FADE88;
+        }
+    </style>
+</head>
+<body>
+    <div class="shape">
+        <div class="circle"></div>
+    </div>
+</body>
+</html>

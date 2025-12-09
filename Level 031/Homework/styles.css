@@ -1,0 +1,100 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #bbd2e8, #95cfd2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 850px;
+    max-width: 95%;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.general, .contact {
+    padding: 40px;
+    flex: 1;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+
+.general {
+    background-color: #f2f7ff;
+    color: #333;
+}
+
+.contact {
+    background-color: #6a5acd;
+    color: #fff;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: inherit;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: inherit;
+}
+
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    border-color: #757de8;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.terms {
+    margin-top: 20px;
+    font-size: 14px;
+    color: inherit;
+}
+
+.btn {
+    background-color: #ffeb3b;
+    color: #6a5acd;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffc107;
+    color: #fff;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Exercises</title>
+    <style>
+        .container {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .child {
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Exercise 1: Color specific child -->
+    <div id="parent1">
+        <div class="child">Child 1</div>
+        <div class="child">Child 2</div>
+        <div class="child">Child 3</div>
+        <div class="child">Child 4</div>
+    </div>
+    <input type="number" id="childIndex" min="0" max="3" value="0">
+    <button onclick="colorChild()">Color Selected Child</button>
+
+    <!-- Exercise 2: Check if div has children -->
+    <div id="parent2">
+        <div class="child">Div with child</div>
+    </div>
+    <div id="parent3">Div with text content</div>
+    <div id="parent4"></div>
+    <button onclick="checkForChildren()">Check Divs for Children</button>
+
+    <!-- Exercise 3: Color all children differently -->
+    <div id="parent5">
+        <div class="child">Child 1</div>
+        <div class="child">Child 2</div>
+        <div class="child">Child 3</div>
+        <div class="child">Child 4</div>
+    </div>
+    <button onclick="colorAllChildren()">Color All Children Differently</button>
+
+    <!-- Exercise 4: Color first p element red -->
+    <div id="textContainer">
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+    </div>
+    <button onclick="colorFirstParagraph()">Make First Paragraph Red</button>
+
+    <script>
+        // Exercise 1: Color specific child based on user input
+        function colorChild() {
+            const index = parseInt(document.getElementById('childIndex').value);
+            const parent = document.getElementById('parent1');
+            if (index >= 0 && index < parent.children.length) {
+                parent.children[index].style.backgroundColor = 'lightblue';
+            }
+        }
+
+        // Exercise 2: Check if div has children
+        function checkForChildren() {
+            const divs = [
+                document.getElementById('parent2'),
+                document.getElementById('parent3'),
+                document.getElementById('parent4')
+            ];
+
+            divs.forEach(div => {
+                if (div.children.length > 0 || div.textContent.trim() !== '') {
+                    alert(`Div "${div.id}" has content or children`);
+                } else {
+                    alert(`Div "${div.id}" is empty`);
+                }
+            });
+        }
+
+        // Exercise 3: Color all children differently
+        function colorAllChildren() {
+            const colors = ['#FFCCCB', '#ADD8E6', '#90EE90', '#FFFACD', '#E6E6FA'];
+            const parent = document.getElementById('parent5');
+            
+            for (let i = 0; i < parent.children.length; i++) {
+                parent.children[i].style.backgroundColor = colors[i % colors.length];
+            }
+        }
+
+        // Exercise 4: Color first p element red
+        function colorFirstParagraph() {
+            const container = document.getElementById('textContainer');
+            if (container.children.length > 0) {
+                container.children[0].style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

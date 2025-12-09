@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ricxvebis shemoatana</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        #app {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        #numberInput {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        #numberInput:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+        }
+        
+        #addButton {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        #addButton:hover {
+            background-color: #3a5bef;
+            transform: translateY(-2px);
+        }
+        
+        #addButton:active {
+            transform: translateY(0);
+        }
+        
+        #missionsContainer {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            min-height: 100px;
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .number-item {
+            background-color: white;
+            padding: 12px 18px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .shape {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+            animation: popIn 0.4s ease;
+        }
+        
+        .square {
+            border-radius: 4px;
+        }
+        
+        .circle {
+            border-radius: 50%;
+        }
+        
+        .red { background-color: var(--danger-color); }
+        .green { background-color: var(--success-color); }
+        .blue { background-color: var(--info-color); }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .instructions {
+            background-color: #e9f5ff;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Number Shapes Generator</h1>
+        
+        <div class="input-group">
+            <input type="number" id="numberInput" placeholder="Enter any number...">
+            <button id="addButton">Add Number</button>
+        </div>
+        
+        <div id="missionsContainer"></div>
+        
+        <div class="instructions">
+            <h3>How it works:</h3>
+            <ul>
+                <li>Numbers &gt; 20 go to the end, others go to the start</li>
+                <li>Numbers ending with 1, 2, or 3 add colored squares</li>
+                <li>Even numbers add blue circles to the end</li>
+                <li>Odd numbers add red squares to the start</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        const input = document.getElementById('numberInput');
+        const button = document.getElementById('addButton');
+        const container = document.getElementById('missionsContainer');
+    
+        button.addEventListener('click', () => {
+            const value = parseInt(input.value);
+            if (isNaN(value)) return;
+    
+            const element = document.createElement('div');
+            element.className = 'number-item';
+            element.textContent = value;
+    
+            if (value > 20) {
+                container.appendChild(element);
+            } else {
+                container.insertBefore(element, container.firstChild);
+            }
+    
+            const lastDigit = value % 10;
+            if (lastDigit === 1) {
+                container.appendChild(createShape('square', 'red'));
+            } else if (lastDigit === 2) {
+                container.appendChild(createShape('square', 'green'));
+            } else if (lastDigit === 3) {
+                container.appendChild(createShape('square', 'blue'));
+            }
+    
+            if (value % 2 === 0) {
+                container.appendChild(createShape('circle', 'blue'));
+            } else {
+                container.insertBefore(createShape('square', 'red'), container.firstChild);
+            }
+    
+            input.value = '';
+            input.focus();
+        });
+    
+        function createShape(shapeType, color) {
+            const shape = document.createElement('div');
+            shape.className = `shape ${shapeType} ${color}`;
+            return shape;
+        }
+    </script>
+</body>
+</html>

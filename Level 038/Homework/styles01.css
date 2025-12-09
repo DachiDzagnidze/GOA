@@ -1,0 +1,35 @@
+
+
+
+
+/* CSS for Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.2);
+    }
+    40% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .heartbeat {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4c4c;
+    border-radius: 50%;
+    animation: heartbeat 1.5s infinite;
+    margin: 20px auto;
+  }
+  

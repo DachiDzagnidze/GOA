@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Example</title>
+    <style>
+        #myDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">Click Me</div>
+
+    <script>
+        const myDiv = document.getElementById('myDiv');
+
+        myDiv.addEventListener('click', function handleClick() {
+            // Disable further clicks during animation
+            myDiv.removeEventListener('click', handleClick);
+
+            // Start fade-out animation
+            myDiv.style.opacity = '0';
+
+            setTimeout(() => {
+                // Start fade-in animation after 1 second
+                myDiv.style.opacity = '1';
+
+                setTimeout(() => {
+                    // Re-enable click event after animation completes
+                    myDiv.addEventListener('click', handleClick);
+                }, 1000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

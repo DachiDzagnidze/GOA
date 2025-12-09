@@ -1,0 +1,68 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 128, 128, 0.55); /* Default overlay color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px;
+}
+
+/* Specific overlay colors for Paris, Tbilisi, and Dubai */
+.card:nth-child(2) .overlay {
+    background-color: rgba(255, 99, 71, 0.55); /* Tomato color */
+}
+
+.card:nth-child(4) .overlay {
+    background-color: rgba(255, 99, 71, 0.55); /*  Tomato color */
+     
+}
+
+.card:nth-child(6) .overlay {
+    background-color: rgba(255, 99, 71, 0.55); /* Tomato color */
+     
+}
+
+.overlay h2 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.overlay p {
+    margin: 10px 0 0;
+    font-size: 16px;
+}

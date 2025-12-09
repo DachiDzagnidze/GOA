@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Users & Dogs App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .tab.active {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+
+    .content {
+      background: white;
+      padding: 30px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      margin: 5px 0;
+      padding: 5px;
+      background: #f7f7f7;
+      border-radius: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Users & Dogs Viewer</h1>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('users')">📋 Users (A–H)</div>
+    <div class="tab" onclick="switchTab('dogs')">🐶 Random Dog</div>
+  </div>
+
+  <div class="content" id="usersContent">
+    <h2>Filtered Users (A–H)</h2>
+    <ul id="userList">Loading...</ul>
+  </div>
+
+  <div class="content" id="dogsContent" style="display: none;">
+    <h2>See a Random Dog!</h2>
+    <button onclick="loadDog()">🐾 Show Dog</button>
+    <img id="dogImage" src="" alt="Random Dog" />
+  </div>
+
+  <script>
+    // Tabs
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
+
+      document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+      document.getElementById(tabName + 'Content').style.display = 'block';
+    }
+
+    // Load users
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(user => {
+          const c = user.name[0].toLowerCase();
+          return c >= 'a' && c <= 'h';
+        }).sort((a, b) => a.name.localeCompare(b.name));
+
+        const list = document.getElementById('userList');
+        list.innerHTML = '';
+        filtered.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = user.name;
+          list.appendChild(li);
+        });
+      });
+
+    // Load dog
+    function loadDog() {
+      fetch('https://dog.ceo/api/breeds/image/random')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('dogImage').src = data.message;
+        });
+    }
+
+    // Load first dog initially
+    loadDog();
+  </script>
+</body>
+</html>

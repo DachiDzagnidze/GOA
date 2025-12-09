@@ -1,0 +1,65 @@
+<html>  <!-- daviwkot saitis sheqmna-->
+            <head>
+                <title>Registration Form</title>
+            </head>
+    <body>
+        <h2>Registraciis forma</h2>
+        <form>
+          <!--shevqmnat forma saxelis emailis da parolis shesakvani velebit-->
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+  
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+         
+            <!--shevqmnat qveynis asarchevi shesakvani veli-->
+            <label for="country">Country:</label><br>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+                <option value="Georgia">Georgia</option>
+                
+            </select><br><br>
+             <!-- shevqmnat Genderis amosarchevi gilakebi-->
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            
+
+            
+         <!--hobbyis asarchevi velis sheqmna-->
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I accept the privacy policy.</label><br><br>
+
+            <label for="hobby">Favorite Hobby:</label><br>
+            <select id="hobby" name="hobby">
+                <option value="reading">Reading</option>
+                <option value="playing">playing</option>
+                <option value="sports">Sports</option>
+                
+            </select><br><br>
+         <!--filke asatvirti veli profile picturisatvis-->
+            <label for="profile-pic">Upload Profile Picture:</label><br>
+            <input type="file" id="profile-pic" name="profile-pic"><br><br>
+        <!--tarigis asarchevi veli-->
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob"><br><br>
+        <!--da an dzma-->
+            <label for="siblings">Do you have a sister/brother/both:</label><br>
+            <select id="siblings" name="siblings">
+                <option value="sister">Sister</option>
+                <option value="brother">Brother</option>
+                <option value="both">Both</option>
+            </select><br><br>
+        <!-- sumbit buttoni-->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>

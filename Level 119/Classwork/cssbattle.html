@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Battle Example</title>
+    <style>
+        * {
+            --b: #fff;
+            background: radial-gradient(1q, #328FC1 25px, var(--b));
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        * * {
+            --b: #fff 0 127q, #328FC1;
+            margin: 75px 75px 295px 215px;
+            -webkit-box-reflect: left 201px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(50,143,193,0.2);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        * *:hover {
+            box-shadow: 0 8px 32px rgba(50,143,193,0.4);
+            transform: scale(1.03);
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #328FC1 0%, #fff 100%);
+        }
+    </style>
+</head>
+</body>
+</html>

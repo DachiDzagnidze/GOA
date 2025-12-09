@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Day 126 - Users & Error Handling</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .status-box {
+      margin-top: 25px;
+      padding: 15px;
+      font-weight: bold;
+      border-radius: 8px;
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      max-width: 500px;
+      margin-inline: auto;
+    }
+
+    li {
+      background: #fff;
+      margin: 6px 0;
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Status Styles */
+    .status-200 {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-3xx {
+      background-color: #cce5ff;
+      color: #004085;
+    }
+
+    .status-4xx {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .status-5xx {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📋 User List with Error Handling</h1>
+  <button onclick="loadUsers()">Load Users</button>
+
+  <div id="statusBox" class="status-box"></div>
+  <ul id="userList"></ul>
+
+  <script>
+    function loadUsers() {
+      const userList = document.getElementById('userList');
+      const statusBox = document.getElementById('statusBox');
+      userList.innerHTML = '';
+      statusBox.style.display = 'none';
+
+      // Simulate random status codes
+      const fakeStatuses = [200, 200, 301, 302, 304, 403, 404, 500];
+      const randomStatus = fakeStatuses[Math.floor(Math.random() * fakeStatuses.length)];
+
+      // Fetch from API
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => {
+          // Wrap response in simulated "fakeStatus" logic
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (randomStatus === 200) {
+                resolve({ status: randomStatus, data: res.json() });
+              } else {
+                reject({ status: randomStatus });
+              }
+            }, 500); // Simulated delay
+          });
+        })
+
+        // Handle successful fakeStatus
+        .then(async ({ status, data }) => {
+          const users = await data;
+          showStatus(`✅ Success! (Status ${status})`, status);
+
+          users.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = user.name;
+            userList.appendChild(li);
+          });
+        })
+
+        // Handle error statuses
+        .catch(err => {
+          const status = err.status || 500;
+          let message = `❌ Error: Status ${status}`;
+
+          if (status === 403) message = '⚠️ Forbidden (403)';
+          if (status === 404) message = '❌ Not Found (404)';
+          if (status === 500) message = '💥 Server Error (500)';
+          if ([301, 302, 304].includes(status)) message = `🔁 Redirected (Status ${status})`;
+
+          showStatus(message, status);
+        });
+    }
+
+    // Show status messages with appropriate color
+    function showStatus(message, code) {
+      const statusBox = document.getElementById('statusBox');
+      statusBox.textContent = message;
+      statusBox.style.display = 'block';
+
+      // Reset classes
+      statusBox.className = 'status-box';
+
+      // Add appropriate class based on status
+      if (code === 200) statusBox.classList.add('status-200');
+      else if ([301, 302, 304].includes(code)) statusBox.classList.add('status-3xx');
+      else if (code >= 400 && code < 500) statusBox.classList.add('status-4xx');
+      else if (code >= 500) statusBox.classList.add('status-5xx');
+    }
+  </script>
+
+</body>
+</html>

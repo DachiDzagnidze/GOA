@@ -1,0 +1,39 @@
+
+
+
+/* ყველა ელემენტისთვის რობოტოს შრიფტის გამოყენება */
+body {
+  font-family: 'Roboto'; 
+}
+/*მთავარი ლინკების  style  შეცვლა */
+a {
+    text-decoration: none; /* წაშლის ხაზს ლინკის ქვემოთ */
+    padding: 8px 12px; /* ლინკის ირგვლივ ზომები*/
+    border-radius: 4px; /* კუთხეების გასწორება */
+    display: inline-block; /* ლინკის ბლოკური ელემენტი */
+  }
+  
+  /* :link სექრეტორი არჩეული ლინკებისთვის, რომლებიც ჯერ არ გვინახავს */
+  a:link {
+    color: #0099ff; 
+    background-color: #ecf0f1; 
+  }
+  
+  /* :visited სექრეტორი არჩეული ლინკებისთვის რომლებიც უკვე გვინახავს */
+  a:visited {
+    color: #b403fa; 
+    background-color: #f5f5f5; 
+  }
+  
+  /* :hover სექრეტორი იმ დროსროდესაც კურსორს ვუსვამთ */
+  a:hover {
+    color: #ffffff; 
+    background-color: rgb(47, 47, 214); 
+  }
+  
+  /* :active სექრეტორი იმ დროს როდესაც ლინკზე ვაწვებით*/
+  a:active {
+    color: #ffffff; 
+    background-color: #e74c3c; 
+ }
+  

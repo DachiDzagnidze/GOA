@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Battle</title>
+    <style>
+        * {
+            border: 16q solid #4B4D88;
+            border-radius: 1in;
+            margin: 230 74 40;
+        }
+        * * {
+            margin: -125 96 65;
+        }
+        p {
+            position: fixed;
+            height: 30px;
+            rotate: 45deg;
+            margin: -84 53;
+            box-shadow: 75q 75q #4B4D88;
+        }
+        p + p {
+            rotate: -45deg;
+            scale: -1 1;
+            left: 64px;
+        }
+        .container {
+            position: relative;
+            width: 200px;
+            height: 150px;
+        }
+        .rectangle {
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            background: #484D88;
+            bottom: 20px;
+            left: 50%;
+            border-radius: 15px;
+            transform: translateX(-50%);
+        }
+        .lines div {
+            position: absolute;
+            width: 60px;
+            height: 15px;
+            background: #484D88;
+            border-radius: 10px;
+        }
+        .lines div:nth-child(1) {
+            top: 30px;
+            left: 20px;
+            transform: rotate(45deg);
+        }
+        .lines div:nth-child(2) {
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .lines div:nth-child(3) {
+            top: 30px;
+            right: 20px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <div class="container">
+        <div class="rectangle"></div>
+        <div class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

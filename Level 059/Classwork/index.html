@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<body>
+    <h1>Fill Out the Form</h1>
+    <form id="userForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br><br>
+        <label for="agreement">
+            <input type="checkbox" id="agreement" name="agreement">
+            I agree to the terms
+        </label>
+        <br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

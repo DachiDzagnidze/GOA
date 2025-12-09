@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 20px;
+}
+
+
+
+/* Square */
+.square {
+    width: 80px;
+    height: 80px;
+    background-color: #ff66b2;
+}
+
+/* Circle */
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ff4500;
+    border-radius: 50%;
+}
+
+/* Rectangle */
+.rectangle {
+    width: 100px;
+    height: 60px;
+    background-color: #007acc;
+}
+
+/* Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid #00ccff;
+}
+
+/* Pentagon */
+.pentagon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 70px 40px;
+    border-color:rgb(63, 183, 63) ;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+/* Ellipse */
+.ellipse {
+    width: 80px;
+    height: 50px;
+    background-color: #ff99cc;
+    border-radius: 50%;
+}
+
+/* Star */
+.star {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid #b3b3cc;
+    position: relative;
+}
+
+.star:after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid #b3b3cc;
+}
+
+/* Crescent */
+.crescent {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 25px 25px, transparent 40px, #ff99cc 40px);
+}
+
+/* Heart */
+.heart {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #ffcc66;
+    transform: rotate(-45deg);
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #ffcc66;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -40px;
+    left: 0;
+}
+
+.heart:after {
+    left: 40px;
+    top: 0;
+}

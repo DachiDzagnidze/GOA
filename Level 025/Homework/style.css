@@ -1,0 +1,19 @@
+#page-title {
+    color: #003366;
+    text-align: center;
+}
+
+.info-text {
+    color: #006400;
+    font-size: 18px;
+}
+
+.container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+#section-heading {
+    color: #cc0000;
+}

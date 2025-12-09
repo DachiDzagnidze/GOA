@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Battle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #498488;
+        }
+        .underwear {
+            width: 240px;
+            height: 125px;
+            background: #D99795;
+            position: relative;
+        }
+        .waistband {
+            width: 240px;
+            height: 20px;
+            background: #D9D9D9;
+            position: absolute;
+            top: -15px;
+            left: 0;
+        }
+        .left-cut, .right-cut {
+            width: 100px;
+            height: 100px;
+            background: #498488;
+            position: absolute;
+            bottom: 0;
+        }
+        .left-cut {
+            left: -40px;
+            clip-path: circle(71% at 0 100%);
+        }
+        .right-cut {
+            right: -40px;
+            clip-path: circle(71% at 100% 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="underwear">
+        <div class="left-cut"></div>
+        <div class="right-cut"></div>
+        <div class="waistband"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f8f8; 
+    color: #333; 
+    flex-direction: column;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.text {
+    font-size: 60px;
+    font-weight: 700;
+    color: #4CAF50;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1.5s ease, transform 0.8s ease, color 1.5s ease, letter-spacing 0.5s ease;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
+}
+
+
+.text.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    letter-spacing: 3px;
+    color: #ff5722; 
+    text-shadow: none;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styling */
+.button {
+    margin-top: 30px;
+    padding: 18px 36px;
+    font-size: 20px;
+    background-color: #4CAF50; /* Elegant green button */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #45a049; /* Slightly darker green */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Active Effect */
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Focus Outline */
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+/* Button Click Animation */
+@keyframes buttonPop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.button:active {
+    animation: buttonPop 0.3s ease;
+}

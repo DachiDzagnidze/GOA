@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark {
+      background-color: #333;
+      color: #fff;
+    }
+    .light {
+      background-color: #fff;
+      color: #000;
+    }
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #f9f9f9;
+    }
+    input, button, select {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .calculator {
+      margin-top: 30px;
+    }
+    .calculator input, .calculator select, .calculator button {
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body class="light">
+
+<div class="container">
+  <h2>Registration</h2>
+  <input type="number" id="age" placeholder="Enter your age">
+  <input type="text" id="color" placeholder="Enter a color (e.g. red)">
+  <button id="themeToggle">Toggle Dark/Light Theme</button>
+
+  <div class="calculator">
+    <h2>Calculator</h2>
+    <input type="number" id="num1" placeholder="First number">
+    <select id="operation">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" placeholder="Second number">
+    <button id="calculate">Calculate</button>
+    <h3 id="result"></h3>
+  </div>
+</div>
+
+<script>
+  const ageInput = document.getElementById('age');
+  const colorInput = document.getElementById('color');
+  const themeButton = document.getElementById('themeToggle');
+  const num1Input = document.getElementById('num1');
+  const num2Input = document.getElementById('num2');
+  const operationSelect = document.getElementById('operation');
+  const calcButton = document.getElementById('calculate');
+  const resultDisplay = document.getElementById('result');
+  const body = document.body;
+
+  ageInput.addEventListener('input', function() {
+    if (ageInput.value !== '') {
+      body.style.backgroundColor = ageInput.value >= 18 ? 'green' : 'red';
+    }
+  });
+
+  colorInput.addEventListener('input', function() {
+    body.style.backgroundColor = colorInput.value;
+  });
+
+  themeButton.addEventListener('click', function() {
+    body.classList.toggle('dark');
+    body.classList.toggle('light');
+  });
+
+  calcButton.addEventListener('click', function() {
+    const num1 = parseFloat(num1Input.value);
+    const num2 = parseFloat(num2Input.value);
+    const operation = operationSelect.value;
+    let result = '';
+
+    if (isNaN(num1) || isNaN(num2)) {
+      result = 'Enter valid numbers';
+    } else {
+      if (operation === '+') result = num1 + num2;
+      if (operation === '-') result = num1 - num2;
+      if (operation === '*') result = num1 * num2;
+      if (operation === '/') result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+    }
+
+    resultDisplay.textContent = result;
+  });
+</script>
+
+</body>
+</html>

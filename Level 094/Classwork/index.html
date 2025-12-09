@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child Text Printer</title>
+</head>
+<body>
+
+<div id="example">
+  <p>Hello</p>
+  <p>World</p>
+</div>
+
+<script>
+  function printChildrenText(element) {
+    const children = element.children;
+    if (children.length === 0) {
+      console.log("There is no text!");
+      return;
+    }
+
+    for (let i = 0; i < children.length; i++) {
+      const text = children[i].textContent.trim();
+      console.log(text === "" ? "Empty text" : text);
+    }
+  }
+
+  const el = document.getElementById("example");
+  printChildrenText(el);
+</script>
+
+</body>
+</html>

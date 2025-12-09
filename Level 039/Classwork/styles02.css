@@ -1,0 +1,30 @@
+ 
+
+
+
+
+
+ /* ელემენტის სტანდარტული სტილი */
+.transform-box {
+    width: 200px;
+    height: 200px;
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 50px auto;
+    transition: transform 0.5s; /* ტრანსფორმაციის დროს */
+}
+
+/* :hover ეფექტი */
+.transform-box:hover {
+    /* სტანდარტული transform */
+    transform: rotate(45deg);
+
+    /* ვენდორ პრეფიქსები */
+    -webkit-transform: rotate(45deg); /* Safari, Chrome */
+    -moz-transform: rotate(45deg);    /* Firefox */
+    -ms-transform: rotate(45deg);     /* IE 9 */
+}

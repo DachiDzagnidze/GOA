@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+</head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm">
+    <input type="text" placeholder="Username" id="username" required><br>
+    <input type="password" placeholder="Password" id="password" required><br>
+    <button type="submit">Register</button>
+  </form>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      localStorage.setItem('user', JSON.stringify({ username, password }));
+      window.location.href = 'fake-store-shop.html';
+    });
+  </script>
+</body>
+</html>

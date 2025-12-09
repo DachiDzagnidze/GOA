@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Battle</title>
+    <style>
+        body {
+            background: #EDECC1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .circle {
+            width: 250px;
+            height: 250px;
+            background: #CC5252;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .cutout {
+            width: 150px;
+            height: 150px;
+            background: #EDECC1;
+            border-radius: 50%;
+            position: absolute;
+            top: 55px;
+            left: 55px;
+        }
+
+        .line {
+            width: 50px;
+            height: 177px;
+            background: #CC5252;
+            position: absolute;
+            left: 90px;
+            bottom: 30px;
+            transform: rotate(60deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="circle">
+        <div class="cutout"></div>
+        <div class="line"></div>
+    </div>
+</body>
+</html>

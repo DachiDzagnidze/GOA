@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Random Animal Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      padding: 40px;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group label {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      max-height: 260px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐾 Generate Random Animal Images</h1>
+
+  <div class="checkbox-group">
+    <label><input type="checkbox" id="cat"> Cat 🐱</label>
+    <label><input type="checkbox" id="dog"> Dog 🐶</label>
+    <label><input type="checkbox" id="fox"> Fox 🦊</label>
+  </div>
+
+  <button onclick="generateImages()">Generate</button>
+
+  <div class="gallery" id="imageContainer"></div>
+
+  <script>
+    async function generateImages() {
+      const catChecked = document.getElementById("cat").checked;
+      const dogChecked = document.getElementById("dog").checked;
+      const foxChecked = document.getElementById("fox").checked;
+
+      const container = document.getElementById("imageContainer");
+      container.innerHTML = ""; // Clear previous images
+
+      // Helper to add image cards
+      function addCard(title, imageUrl) {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const img = document.createElement("img");
+        img.src = imageUrl;
+
+        const label = document.createElement("div");
+        label.className = "card-title";
+        label.textContent = title;
+
+        card.appendChild(img);
+        card.appendChild(label);
+        container.appendChild(card);
+      }
+
+      // Fetch Cat
+      if (catChecked) {
+        try {
+          const res = await fetch("https://api.thecatapi.com/v1/images/search");
+          const data = await res.json();
+          addCard("Cat", data[0].url);
+        } catch (err) {
+          addCard("Cat (error)", "https://via.placeholder.com/300x200?text=Error");
+        }
+      }
+
+      // Fetch Dog
+      if (dogChecked) {
+        try {
+          const res = await fetch("https://dog.ceo/api/breeds/image/random");
+          const data = await res.json();
+          addCard("Dog", data.message);
+        } catch (err) {
+          addCard("Dog (error)", "https://via.placeholder.com/300x200?text=Error");
+        }
+      }
+
+      // Fetch Fox
+      if (foxChecked) {
+        try {
+          const res = await fetch("https://randomfox.ca/floof/");
+          const data = await res.json();
+          addCard("Fox", data.image);
+        } catch (err) {
+          addCard("Fox (error)", "https://via.placeholder.com/300x200?text=Error");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

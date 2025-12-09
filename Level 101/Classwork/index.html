@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Card</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #0d1a2d;
+            margin: 0;
+            padding: 20px;
+            color: white;
+        }
+        
+        .nft-card {
+            background-color: #15273f;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            max-width: 300px;
+            width: 100%;
+        }
+        
+        .nft-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .nft-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .nft-description {
+            color: #8bacda;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .nft-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2f4159;
+        }
+        
+        .nft-price, .nft-time {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .nft-price {
+            color: #00fff7;
+            font-weight: bold;
+        }
+        
+        .nft-time {
+            color: #8bacda;
+        }
+        
+        .nft-creator {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #8bacda;
+        }
+        
+        .creator-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid white;
+            margin-right: 15px;
+        }
+        
+        .creator-name {
+            color: white;
+        }
+        
+        .icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nft-card">
+        <img src="https://via.placeholder.com/300x300" alt="NFT Image" class="nft-image">
+        
+        <h2 class="nft-title">Equilibrium #3429</h2>
+        <p class="nft-description">Our Equilibrium collection promotes balance and calm.</p>
+        
+        <div class="nft-details">
+            <div class="nft-price">
+                <span class="icon">🔍</span> 0.041 ETH
+            </div>
+            <div class="nft-time">
+                <span class="icon">⏱️</span> 3 days left
+            </div>
+        </div>
+        
+        <div class="nft-creator">
+            <img src="https://via.placeholder.com/30" alt="Creator Avatar" class="creator-avatar">
+            <span>Creation of <span class="creator-name">Julie Wyvern</span></span>
+        </div>
+    </div>
+</body>
+</html>

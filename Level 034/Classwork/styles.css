@@ -1,0 +1,32 @@
+
+html, body {
+    height: 100%; /* Ensures the body takes up the full height of the viewport */
+    margin: 0; /* Removes default margin */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.icon-wrapper {
+    position: relative;
+    width: 70px;
+}
+
+.badge {
+ width: 250px;
+    height: 250px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 250px;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 300px;
+}

@@ -1,0 +1,51 @@
+
+
+
+
+/* Basic Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: #007BFF;
+}
+
+.nav-link:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-link:visited {
+    color: #d0d0d0;
+}

@@ -1,0 +1,78 @@
+
+
+
+/* :root სელექტორის გამოყენება ფერების განსაზღვრად */
+:root {
+    --main-color: #3498db; /* ცვლადი ძირითადი ფერით */
+}
+
+/* ფერი გამოიყენება ყველა ელემენტისთვის */
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.styled-button {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #2980b9;
+}
+
+.text {
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+
+/* 
+:root სელექტორი არის სპეციალური სელექტორი, რომელიც გამოიყენება დოკუმენტის ძირეული (root) ელემენტისთვის, ჩვეულებრივ <html>. 
+ეს სელექტორი გვეხმარება ცვლადების განსაზღვრაში, რომლებიც მთელი დოკუმენტისთვის იქნება ხელმისაწვდომი.
+*/
+:root {
+    --main-color: #3498db; /* ვქმნით ცვლადს სახელად --main-color, რომელსაც აქვს ფერის მნიშვნელობა */
+}
+
+/* 
+"var()" ფუნქცია საშუალებას გვაძლევს გამოვიყენოთ :root-ში განსაზღვრული ცვლადები 
+კონკრეტული ელემენტების სტილიზაციისთვის. ამ მაგალითში, ცვლადი --main-color გამოიყენება ელემენტების სხვადასხვა სტილში.
+*/
+
+/* Box ელემენტის სტილიზაცია */
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: var(--main-color); /* ვაქცევთ background ფერს --main-color */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Button ელემენტის სტილიზაცია */
+.styled-button {
+    background-color: var(--main-color); /* გამოყენებულია იგივე ფერი რაც box ელემენტში */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Squares</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        
+        .square {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid #000;
+            box-sizing: border-box;
+        }
+        
+        /* Layer 1 - outermost square */
+        .square-1 {
+            width: 450px;
+            height: 450px;
+            background-color: #FF5733;
+        }
+        
+        /* Layer 2 */
+        .square-2 {
+            width: 400px;
+            height: 400px;
+            background-color: #33FF57;
+        }
+        
+        /* Layer 3 */
+        .square-3 {
+            width: 350px;
+            height: 350px;
+            background-color: #3357FF;
+        }
+        
+        /* Layer 4 */
+        .square-4 {
+            width: 300px;
+            height: 300px;
+            background-color: #F3FF33;
+        }
+        
+        /* Layer 5 */
+        .square-5 {
+            width: 250px;
+            height: 250px;
+            background-color: #FF33F3;
+        }
+        
+        /* Layer 6 */
+        .square-6 {
+            width: 200px;
+            height: 200px;
+            background-color: #33FFF3;
+        }
+        
+        /* Layer 7 */
+        .square-7 {
+            width: 150px;
+            height: 150px;
+            background-color: #F333FF;
+        }
+        
+        /* Layer 8 */
+        .square-8 {
+            width: 100px;
+            height: 100px;
+            background-color: #8A33FF;
+        }
+        
+        /* Layer 9 - innermost square */
+        .square-9 {
+            width: 50px;
+            height: 50px;
+            background-color: #FF8A33;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square square-1"></div>
+        <div class="square square-2"></div>
+        <div class="square square-3"></div>
+        <div class="square square-4"></div>
+        <div class="square square-5"></div>
+        <div class="square square-6"></div>
+        <div class="square square-7"></div>
+        <div class="square square-8"></div>
+        <div class="square square-9"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Battle</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FBFDB7;
+            height: 100vh;
+            margin: 0;
+        }
+        div {
+            width: 60px;
+            height: 400px;
+            background: linear-gradient(to bottom, #46BA67 57.5%, #D95362 57.5%);
+            position: absolute;
+            left: 15%;
+        }
+        [z]  {
+            transform: scaleY(-1);
+            left: 70%;
+        }
+        [l]{
+            width: 250px;
+            background: #46BA67;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div z></div>
+    <div l></div>
+</body>
+</html>
