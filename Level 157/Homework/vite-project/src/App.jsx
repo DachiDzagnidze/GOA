@@ -4,7 +4,7 @@ import UsersList from "./components/UsersList";
 import LoadPostsOnClick from "./components/LoadPostsOnClick";
 
 export default function App() {
-  const sectionStyle = { marginBottom: "20px" }; // reusable style
+  const sectionStyle = { marginBottom: "20px" }; 
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial" }}>
