@@ -35,7 +35,6 @@ h1 {
   text-align: center;
   margin-bottom: 64px;
   background: linear-gradient(135deg, #f8fafc, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
