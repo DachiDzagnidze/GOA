@@ -7,7 +7,7 @@ export default function DynamicList() {
 
   function addItem() {
     if (!input.trim()) return;
-    setItems([...items, input]);
+    setItems(prevItem => [...prevItem, input]);
     setInput("");
   }
 
