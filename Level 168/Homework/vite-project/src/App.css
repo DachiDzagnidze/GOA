@@ -1,0 +1,122 @@
+:root {
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --background-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --card-bg: #1a1a1a;
+  --card-border: #333;
+  --card-radius: 12px;
+  --input-bg: #333;
+  --input-text: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  font-size: 1rem;
+  transition: border-color 0.25s;
+}
+
+input:focus {
+  outline: 4px auto -webkit-focus-ring-color;
+  border-color: var(--primary-color);
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+/* Common Card Styles */
+.name-length-card,
+.product-total-card,
+.two-numbers-sum,
+.todo-count-card,
+.todo-completed-card,
+.student-average-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+
+.name-length-card:hover,
+.product-total-card:hover,
+.two-numbers-sum:hover,
+.todo-count-card:hover,
+.todo-completed-card:hover,
+.student-average-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-color);
+}
+
+/* Specific Component Tweaks */
+.two-numbers-sum input {
+  margin-bottom: 0.8rem;
+}
+
+.two-numbers-sum strong {
+  color: #4ade80; /* Green for success/money */
+  font-size: 1.2rem;
+}
+
+.product-total-card p {
+  font-weight: bold;
+  color: #fbbf24; /* Amber/Gold for money */
+}
+
+.student-average-card p {
+  color: #60a5fa; /* Blue for info */
+}
+
+.todo-completed-card p,
+.todo-count-card p {
+  color: #f87171; /* Red for alerts/tasks */
+}
