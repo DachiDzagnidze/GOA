@@ -1,0 +1,15 @@
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.reset-btn {
+  background-color: #dc2626;
+  color: white;
+}
+
+.reset-btn:hover {
+  border-color: #ef4444;
+  background-color: #b91c1c;
+}

@@ -1,0 +1,86 @@
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+button {
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Task Container */
+.task-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* Controls Section */
+.controls {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls label {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Product/Item Card */
+.item-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.item-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.item-status {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.item-status.out-of-stock {
+  color: #c0392b;
+}
