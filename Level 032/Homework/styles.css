@@ -31,7 +31,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 128, 128, 0.55); /* Default overlay color */
+    background-color: rgba(0, 128, 128, 0.55); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,18 +41,18 @@ body {
     padding: 20px;
 }
 
-/* Specific overlay colors for Paris, Tbilisi, and Dubai */
+
 .card:nth-child(2) .overlay {
-    background-color: rgba(255, 99, 71, 0.55); /* Tomato color */
+    background-color: rgba(255, 99, 71, 0.55);
 }
 
 .card:nth-child(4) .overlay {
-    background-color: rgba(255, 99, 71, 0.55); /*  Tomato color */
+    background-color: rgba(255, 99, 71, 0.55); 
      
 }
 
 .card:nth-child(6) .overlay {
-    background-color: rgba(255, 99, 71, 0.55); /* Tomato color */
+    background-color: rgba(255, 99, 71, 0.55); 
      
 }
 
