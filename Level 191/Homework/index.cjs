@@ -29,5 +29,5 @@ if (process.argv.length <= 2) {
     console.log("No argument");
     process.exit(1);
 } else {
-    console.log("მომხმარებელმა არგუმენტი გადმოსცა.");
+    console.log("user provided argument.");
 }

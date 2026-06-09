@@ -21,7 +21,7 @@ const useTodoStore = create(
         })),
     }),
     {
-      name: 'todo-storage', // key in localStorage
+      name: 'todo-storage',
     }
   )
 );

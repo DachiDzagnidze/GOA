@@ -1,0 +1,98 @@
+{
+  "permissions": {
+    "allow": ["*"],
+    "deny": [
+      "Bash(sudo rm:*)",
+      "Bash(rm -rf /:*)",
+      "Bash(rm -rf ~:*)",
+      "Bash(dd:*of=/dev/:*)",
+      "Bash(mkfs:*)",
+      "Bash(fdisk:*)",
+      "Bash(curl:*|:*)",
+      "Bash(wget:*|:*)",
+      "Bash(:*eval:*)",
+      "Bash(:*exec:*)",
+      "Write(//etc/passwd)",
+      "Write(//etc/shadow)",
+      "Edit(//etc/passwd)",
+      "Edit(//etc/shadow)",
+      "Read(~/.ssh/id_*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(.env*)",
+      "Read(**/secrets/**)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.config/gcloud/**)"
+    ],
+    "ask": [
+      "Bash(rm )",
+      "Bash(rm -)",
+      "Bash(rmdir:*)",
+      "Bash(trash:*)",
+      "Bash(find:*-delete:*)",
+      "Bash(xargs:*rm:*)",
+      "Bash(chmod 777:*)",
+      "Bash(chown:*)",
+      "Bash(git push:*)",
+      "Bash(npm publish:*)",
+      "Bash(pip install:*)",
+      "Bash(brew install:*)",
+      "Bash(apt install:*)",
+      "Bash(apt-get install:*)",
+      "Bash(yum install:*)",
+      "Bash(curl )",
+      "Bash(wget )",
+      "WebFetch",
+      "mcp__github__merge_pull_request"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/format.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/safety.cjs",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/session-end.cjs",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "node $CLAUDE_PROJECT_DIR/.claude/scripts/statusline.cjs",
+    "padding": 0
+  },
+  "outputStyle": "terse",
+  "env": {
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "1",
+    "BASH_DEFAULT_TIMEOUT_MS": "120000",
+    "BASH_MAX_TIMEOUT_MS": "600000"
+  }
+}
